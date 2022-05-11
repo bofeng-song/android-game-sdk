@@ -9,6 +9,15 @@ This project use google game sdk source code. Current dependency info:
 ## How to use cloned code
 
 - Copy 'GameActivity', 'GameController', 'GameTextInput' and 'src/extras' directories from cloned directories.
+- Change onCreate function of GameActivity
+
+    ```
+        String libname = "main";
+        // following code is needed to be added
+        if (null != getIntent().getStringExtra(META_DATA_LIB_NAME)) {
+        libname = getIntent().getStringExtra(META_DATA_LIB_NAME);
+        }
+    ```
 
 ## How to Build
 
